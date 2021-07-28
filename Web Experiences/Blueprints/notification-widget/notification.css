@@ -1,12 +1,23 @@
+/* accomodate every size screen by default */
+/* tested on crome, crome mobile, safari, firefox, edge */
+
+
 /*
-[[ Highlight Colour | colour | #607d8b ]]
-[[Font | enum(Arial,Arial Narrow,Brush Script MT,Calibri,Cambria,Candara,Copperplate,Courier,Courier New,Didot,Garamond,Geneva,Helvetica,Lucida Bright,Monaco,Optima,Perpetua,Times,Times New Roman,Verdana) |Calibri|{order: 5}]];
+[[Slide In From | enum(top,bottom,right,left) | bottom | {required: true, group: General, groupOrder: 1, order: 1} ]]
+[[Vertical Position | enum(top,bottom) | bottom | {required: true, group: General, order: 2} ]]
+[[Horizontal Position | enum(left,right) | right | {required: true, group: General, order: 3} ]]
+[[Background colour | colour | #333 | {group: General, order: 4} ]]
+[[Font | enum(Arial,Arial Narrow,Brush Script MT,Calibri,Cambria,Candara,Copperplate,Courier,Courier New,Didot,Garamond,Geneva,Helvetica,Lucida Bright,Monaco,Optima,Perpetua,Times,Times New Roman,Verdana) |Arial|{order: 5, group: Text, groupOrder: 2, order: 1}]];
+[[Text Colour | colour | #fff | {group: Text, order: 1} ]]
+[[Text Size | number | 18 | {required: true, group: Text, order: 3} ]]
+[[X Color | colour | #fff  | {group: Closing Button, groupOrder: 4}]]
 */
 
-#bx-transition-card {
+
+/* experience container styling */
+#bx-{{ref}} #bx-transition-card {
     position: fixed;
     width: 500px;
-    [[ Slide In From | enum(top,bottom,right,left) | bottom | {required: true, order: 4} ]]: -1000px;
     z-index: 999999;
     margin-bottom: 0;
     border-radius: 4px;
@@ -14,39 +25,99 @@
     overflow: hidden;
     box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(0,0,0,.1);
     max-width:90%;
-    font-family:[[Font]];
+    font-family:[[ Font ]];
     transition: .6s ease-out;
-    background-color: [[background colour | colour | #333]];
-    color: [[Text Colour | colour | #fff]];
+    background-color: [[Background colour ]];
+    color: [[Text Colour ]];
+}
+/* Position animations */
+#bx-{{ref}} #bx-transition-card.position-right-top.animate-top {
+  top: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-left-top.animate-top {
+  top: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-right-top.animate-bottom {
+  top: calc(100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-left-top.animate-bottom {
+  top: calc(100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-left-bottom.animate-right {
+  left: calc(100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-left-top.animate-left {
+  left: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-left-bottom.animate-left {
+  left: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-left-top.animate-right {
+  left: calc(100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-right-bottom.animate-left {
+  right: calc(100vh + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-right-top.animate-left {
+  right: calc(100vh + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-right-bottom.animate-right {
+  right: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-right-top.animate-right {
+  right: -1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-right-bottom.animate-bottom {
+  bottom: calc(-100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-left-bottom.animate-bottom {
+  bottom: calc(-100vw + 1000px);
+}
+#bx-{{ref}} #bx-transition-card.position-right-bottom.animate-top {
+  bottom: 1000px;
+}
+#bx-{{ref}} #bx-transition-card.position-left-bottom.animate-top {
+  bottom: 1000px;
+}
+/* End position animations */
+
+#bx-{{ref}} #bx-transition-card.open {
+    [[ Vertical Position ]]: 10px !important;
+    [[ Horizontal Position ]]: 10px !important;
 }
 
-#bx-transition-card.open {
-    [[ Vertical Position | enum(top,bottom) | bottom | {required: true, order: 2} ]]: 10px;
-    [[ Horizontal Position | enum(left,right) | right | {required: true, order: 3} ]]: 10px;
+#bx-{{ref}} #bx-transition-card .bx-transition-card__body {
+    padding: 10px 0px 10px 0px;
 }
 
-#bx-transition-card .bx-transition-card__body {
-    padding: 20px 20px;
-}
-
-#bx-transition-card .bx-transition-card__body p {
+#bx-{{ref}} #bx-transition-card .bx-transition-card__body p {
     padding: 12px 0;
-    margin: 0;
-    font-size: [[Text Size | number | 18 | {required: true}]]px;
+    margin: 0px 35px 0px 35px;
+    font-size: [[Text Size ]]px;
     line-height: 28px;
-    text-align: center;
+    text-align: left;
     font-family:[[Font]];
+}
+
+/* closing Button on Hover, focus, active */
+#bx-{{ref}} #bx-transition-card .bx__btn-close:hover,
+#bx-{{ref}} #bx-transition-card .bx__btn-close:focus,
+#bx-{{ref}} #bx-transition-card .bx__btn-close:active {
+    background-color: transparent;
+    box-shadow: none;
+    color: #333;
+    text-decoration: none !important;
+    cursor: pointer;
 }
 
 /* close button */
-.bx-modal__btn-close-icon {
-    background: [[ Highlight Colour ]];
-    border-radius: 12px;
+#bx-{{ref}} #bx-transition-card .bx__btn-close {
+  border-radius: 12px;
     top: 0;
     right: 0;
     width: 24px;
     height: 24px;
-    margin-top: 10px;
+    margin-top: 23px;
     margin-right: 15px;
     position: absolute;
     display: flex;
@@ -55,18 +126,24 @@
     cursor: pointer;
 }
 
-.bx-modal__btn-close-icon:after {
-    content: '';
-    height: 15px;
-    border-left: 2px solid #fff;
-    position: absolute;
-    transform: rotate(45deg);
+/* close button right side of X  */
+#bx-{{ref}} #bx-transition-card .bx__btn-close:after {
+  background: transparent;
+  content: "";
+  height: 24px;
+  border-left: 3px solid [[ X Color ]];
+  position: absolute;
+  margin: auto;
+  transform: rotate(45deg);
 }
 
-.bx-modal__btn-close-icon:before {
-    content: '';
-    height: 15px;
-    border-left: 2px solid #fff;
-    position: absolute;
-    transform: rotate(-45deg);
+/* close button left side of X  */
+#bx-{{ref}} #bx-transition-card .bx__btn-close:before {
+  background: transparent;
+  content: "";
+  height: 24px;
+  border-left: 3px solid [[ X Color ]];
+  margin: auto;
+  position: absolute;
+  transform: rotate(-45deg);
 }
