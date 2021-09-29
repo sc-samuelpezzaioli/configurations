@@ -1,16 +1,16 @@
 <!-- Use dynamic Guest variables-->
-<div id="sc_TopBanner">
-    <div class="sc_TopBanner__banner">
-        <span class="sc_TopBanner__p--span" style="display: inline;">[[Title Text | text | For this bar, we recommend less than 50 characters|  {max: 50 , group: Text Configuration}]]</span>
+<div id="sc-top-banner-container">
+    <div class="sc-top-banner">
+        <span class="sc-topbanner-title-text" style="display: inline;">[[Title Text | text | For this bar, we recommend less than 50 characters|  {max: 50 , group: Text Configuration}]]</span>
         <div class="sc-email_section">
             <input type="email" name="sc-email_input" class="sc-email_input" id="sc-email_input" placeholder="[[ Email Ghost Text | string | Email | { required: true, group: Email field Configuration } ]]">
             <div class="sc-modal_button-wrapper">
-                <button id="sc_TopBanner-button" class="sc_TopBanner__p--button">[[Button Text | text | I accept | { group: Button Configuration }]]</button>
+                <button id="sc-CTA" class="sc-CTA">[[Button Text | text | I accept | { group: Button Configuration }]]</button>
                 <a class="sc-modal_button"  target="_blank" id="sc-privacy_button" href="[[ Privacy Link | string | https://www.example.com/ | { required: true , group: Email field Configuration } ]]">Privacy</a>
             </div>
         </div>
     </div>
-    <div class="sc__btn-close__icon"></div>
+    <div class="sc-x-btn"></div>
 </div>
 
 <div id="sc-thank_you_modal">

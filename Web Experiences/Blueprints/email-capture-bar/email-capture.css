@@ -29,7 +29,7 @@ body.show-TopBanner {
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #sc_TopBanner {
+#bx-{{ref}} #sc-top-banner-container{
     -webkit-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     -moz-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
@@ -37,7 +37,7 @@ body.show-TopBanner {
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #sc_TopBanner {
+#bx-{{ref}} #sc-top-banner-container {
     position: fixed;
     z-index: 99998;
     height: 71px;
@@ -51,7 +51,7 @@ body.show-TopBanner {
 }
 
 /* Banner styling */
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner {
+#bx-{{ref}} #sc-top-banner-container .sc-top-banner{
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -61,7 +61,7 @@ body.show-TopBanner {
 }
 
 /* Banner text */
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--span {
+#bx-{{ref}} #sc-top-banner-container .sc-topbanner-title-text {
     color: [[Text Color]];
     font-size: [[ Title Text Font Size | number | 18 | { group: Text Configuration }]]px;
     flex-basis: 400px;
@@ -71,7 +71,7 @@ body.show-TopBanner {
 }
 
 /* email input and buttons container */
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section{
+#bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section{
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -81,11 +81,11 @@ body.show-TopBanner {
     width: 300px; 
 }
 /* CTA button container */
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section .sc-modal_button-wrapper{
+#bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section .sc-modal_button-wrapper{
     min-width: 183px; 
 }
 /* CTA button */
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button {
+#bx-{{ref}} #sc-top-banner-container .sc-CTA {
     border-radius: 4px;
     display: inline-block;
     min-width: 110px;
@@ -102,19 +102,19 @@ body.show-TopBanner {
 }
 
 /* CTA button on hover*/
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button:hover {
+#bx-{{ref}} #sc-top-banner-container .sc-CTA:hover {
     transform: scale(1.1);
 }
 
 /* CTA button on focus*/
-#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button:focus {
+#bx-{{ref}} #sc-top-banner-container .sc-CTA:focus {
     /* border: none; */
     outline: 0;
     box-shadow: none!important;
 }
 
 /* email input */
-#bx-{{ref}} #sc_TopBanner .sc-email_input {
+#bx-{{ref}} #sc-top-banner-container .sc-email_input {
     color: [[Text Color]];
     font-size: 18px;
     border-radius: 2px;
@@ -179,7 +179,7 @@ body.show-TopBanner {
 }
 
 /* close button */
-#bx-{{ref}} .sc__btn-close__icon {
+#bx-{{ref}} .sc-x-btn {
     background: [[ X Background Color | colour | #fff|{  group: Closing Button Configuration } ]];
     top: 20px; 
     right: 15px;
@@ -196,7 +196,7 @@ body.show-TopBanner {
     cursor: pointer;
 }
 /* close button right side of X  */
-#bx-{{ref}} .sc__btn-close__icon:after {
+#bx-{{ref}} .sc-x-btn:after {
     background: transparent;
     content: "";
     height: 20px;
@@ -207,7 +207,7 @@ body.show-TopBanner {
     left:14px;
 }
 /* close button left side of X  */
-#bx-{{ref}} .sc__btn-close__icon:before {
+#bx-{{ref}} .sc-x-btn:before {
     background: transparent;
     content: "";
     height: 20px;
@@ -223,16 +223,16 @@ body.show-TopBanner {
     body.show-TopBanner {
         margin-top: 100px !important;
     }
-    #bx-{{ref}} #sc_TopBanner{
+    #bx-{{ref}} #sc-top-banner-container{
         height: 100px;
     }
-    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner {
+    #bx-{{ref}} #sc-top-banner-container .sc-top-banner {
       flex-direction: column;
     }
-    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section{
+    #bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section{
         margin-bottom: 5px;
     }
-    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--span {
+    #bx-{{ref}} #sc-top-banner-container .sc-topbanner-title-text{
         padding: 10px;
     }
 }

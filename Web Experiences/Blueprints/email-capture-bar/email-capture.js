@@ -11,8 +11,8 @@ insertHTMLBefore("body");
 document.body.classList.add("show-TopBanner");
 
 // declarations
-const scButtonPress = document.getElementById('sc_TopBanner-button');
-const scCloseButtonPress = document.querySelector(".sc__btn-close__icon");
+const scButtonPress = document.getElementById('sc-CTA');
+const scCloseButtonPress = document.querySelector(".sc-x-btn");
 let isBannerBeenClosed = false;
 
 // when sending email, if is verified sendInteractionToSitecoreCDP() or "stop event" ;
@@ -42,7 +42,7 @@ const currentScrollPercentage = function(){
     const scrollPercentage = Math.round((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100);
 
     if (scrollPercentage > scrollPercentageInput && !isBannerBeenClosed){
-        document.querySelector(`#bx-${variant.ref} #sc_TopBanner`).style.display = "flex";
+        document.querySelector(`#bx-${variant.ref} #sc-top-banner-container`).style.display = "flex";
         document.body.classList.add("show-TopBanner");
     }
 }
@@ -56,7 +56,7 @@ const showThankYou= function(){
 
 // dismiss bar
 const hideBar = function(){
-    document.querySelector("#sc_TopBanner").style.display = "none";
+    document.querySelector("#sc-top-banner-container").style.display = "none";
     document.body.classList.remove("show-TopBanner");
 }
 
