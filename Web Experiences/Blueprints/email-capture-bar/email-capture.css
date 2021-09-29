@@ -2,14 +2,14 @@
 /* tested on chrome, crome mobile, safari, firefox, edge */
 /*
 
-Declare Boxever Template Variables
+Declare Sitecore CDP Template Variables
 [[Font | enum(Arial,Arial Narrow,Brush Script MT,Calibri,Cambria,Candara,Copperplate,Courier,Courier New,Didot,Garamond,Geneva,Helvetica,Lucida Bright,Monaco,Optima,Perpetua,Times,Times New Roman,Verdana) |Calibri| {group: General}]];
 [[X Color | colour | #f88  | {group: Closing Button Configuration}]]
 [[Text Color | colour |#444| { group: Text Configuration }]];
 [[ Background Color | colour | #eeeeee| {  group: General } ]]
 */
 
-/* The following Experience is populated with a unique variant identifier: { { ref } }
+/* The following Experience is populated with a unique variant identifier: #bx-{ { ref } }
  when deployed to ensure CSS does not impact styling of other elements. */
 
 /* Hide original top banner (in case it"s present) */
@@ -24,11 +24,12 @@ Declare Boxever Template Variables
 
 /* Push content down to allocate top banner */
 body.show-TopBanner {
-    margin-top: 71px !important;
+    /*margin-top: 71px !important;*/
+    margin-top:[[Space at the top off the page | number | 71 | { required: true, group: General } ]]px !important;
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #bx_TopBanner {
+#bx-{{ref}} #sc_TopBanner {
     -webkit-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     -moz-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
@@ -36,7 +37,7 @@ body.show-TopBanner {
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #bx_TopBanner {
+#bx-{{ref}} #sc_TopBanner {
     position: fixed;
     z-index: 99998;
     height: 71px;
@@ -50,7 +51,7 @@ body.show-TopBanner {
 }
 
 /* Banner styling */
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__banner {
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner {
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -60,7 +61,7 @@ body.show-TopBanner {
 }
 
 /* Banner text */
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__p--span {
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--span {
     color: [[Text Color]];
     font-size: [[ Title Text Font Size | number | 18 | { group: Text Configuration }]]px;
     flex-basis: 400px;
@@ -70,7 +71,7 @@ body.show-TopBanner {
 }
 
 /* email input and buttons container */
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__banner .bx-email_section{
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section{
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -80,11 +81,11 @@ body.show-TopBanner {
     width: 300px; 
 }
 /* CTA button container */
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__banner .bx-email_section .bx-modal_button-wrapper{
-    min-width: 170px; 
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section .sc-modal_button-wrapper{
+    min-width: 183px; 
 }
 /* CTA button */
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__p--button {
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button {
     border-radius: 4px;
     display: inline-block;
     min-width: 110px;
@@ -101,19 +102,19 @@ body.show-TopBanner {
 }
 
 /* CTA button on hover*/
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__p--button:hover {
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button:hover {
     transform: scale(1.1);
 }
 
 /* CTA button on focus*/
-#bx-{{ref}} #bx_TopBanner .bx_TopBanner__p--button:focus {
+#bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--button:focus {
     /* border: none; */
     outline: 0;
     box-shadow: none!important;
 }
 
 /* email input */
-#bx-{{ref}} #bx_TopBanner .bx-email_input {
+#bx-{{ref}} #sc_TopBanner .sc-email_input {
     color: [[Text Color]];
     font-size: 18px;
     border-radius: 2px;
@@ -127,7 +128,7 @@ body.show-TopBanner {
 
 
 /* dark background  after sending the email ( Thank you modal )*/
-#bx-{{ref}} #bx-thank_you_modal{
+#bx-{{ref}} #sc-thank_you_modal{
     display: none;
     justify-content: center;
     align-items: center;
@@ -142,7 +143,7 @@ body.show-TopBanner {
 }
 
 /* Thank you modal General */
-#bx-{{ref}} #bx-thank_you_modal .bx-modal_content {
+#bx-{{ref}} #sc-thank_you_modal .sc-modal_content {
     display: flex;
     flex-direction: column;
     position:relative;
@@ -159,7 +160,7 @@ body.show-TopBanner {
 }
 
 /* Title */
-#bx-{{ref}} #bx-thank_you_modal .bx-modal_content h3 {
+#bx-{{ref}} #sc-thank_you_modal .sc-modal_content h3 {
     font-size: [[ POP-UP Title size in px | number | 28 | {  group: Thank you message} ]]px;
     font-weight: bold;
     margin: auto;
@@ -167,7 +168,7 @@ body.show-TopBanner {
 }
 
 /* text */
-#bx-{{ref}} #bx-thank_you_modal .bx-modal_content p {
+#bx-{{ref}} #sc-thank_you_modal .sc-modal_content p {
     text-align: center;
     padding: 12px 0;
     margin: 0;
@@ -178,7 +179,7 @@ body.show-TopBanner {
 }
 
 /* close button */
-#bx-{{ref}} .bx__btn-close__icon {
+#bx-{{ref}} .sc__btn-close__icon {
     background: [[ X Background Color | colour | #fff|{  group: Closing Button Configuration } ]];
     top: 20px; 
     right: 15px;
@@ -195,7 +196,7 @@ body.show-TopBanner {
     cursor: pointer;
 }
 /* close button right side of X  */
-#bx-{{ref}} .bx__btn-close__icon:after {
+#bx-{{ref}} .sc__btn-close__icon:after {
     background: transparent;
     content: "";
     height: 20px;
@@ -206,7 +207,7 @@ body.show-TopBanner {
     left:14px;
 }
 /* close button left side of X  */
-#bx-{{ref}} .bx__btn-close__icon:before {
+#bx-{{ref}} .sc__btn-close__icon:before {
     background: transparent;
     content: "";
     height: 20px;
@@ -222,16 +223,16 @@ body.show-TopBanner {
     body.show-TopBanner {
         margin-top: 100px !important;
     }
-    #bx-{{ref}} #bx_TopBanner{
+    #bx-{{ref}} #sc_TopBanner{
         height: 100px;
     }
-    #bx-{{ref}} #bx_TopBanner .bx_TopBanner__banner {
+    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner {
       flex-direction: column;
     }
-    #bx-{{ref}} #bx_TopBanner .bx_TopBanner__banner .bx-email_section{
+    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__banner .sc-email_section{
         margin-bottom: 5px;
     }
-    #bx-{{ref}} #bx_TopBanner .bx_TopBanner__p--span {
+    #bx-{{ref}} #sc_TopBanner .sc_TopBanner__p--span {
         padding: 10px;
     }
 }

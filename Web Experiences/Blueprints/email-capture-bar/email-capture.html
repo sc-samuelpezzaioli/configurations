@@ -1,21 +1,20 @@
-<!-- Use dynamic Guest variables, type ctrl+space or guest to explore available entities.-->
-<!-- Type "d" to see decisioning helpers -->
-<div id="bx_TopBanner">
-    <div class="bx_TopBanner__banner">
-        <span class="bx_TopBanner__p--span" style="display: inline;">[[Title Text | text | For this bar, we recommend less than 50 characters|  {max: 50 , group: Text Configuration}]]</span>
-        <div class="bx-email_section">
-            <input type="email" name="bx-email_input" class="bx-email_input" id="bx-email_input" placeholder="[[ Email Ghost Text | string | Email | { required: true, group: Email field Configuration } ]]">
-            <div class="bx-modal_button-wrapper">
-                <button id="bx_TopBanner-button" class="bx_TopBanner__p--button">[[Button Text | text | I accept | { group: Button Configuration }]]</button>
-                <a class="bx-modal_button"  target="_blank" id="bx-privacy_button" href="[[ Privacy Link | string | https://www.example.com/ | { required: true , group: Email field Configuration } ]]">Privacy</a>
+<!-- Use dynamic Guest variables-->
+<div id="sc_TopBanner">
+    <div class="sc_TopBanner__banner">
+        <span class="sc_TopBanner__p--span" style="display: inline;">[[Title Text | text | For this bar, we recommend less than 50 characters|  {max: 50 , group: Text Configuration}]]</span>
+        <div class="sc-email_section">
+            <input type="email" name="sc-email_input" class="sc-email_input" id="sc-email_input" placeholder="[[ Email Ghost Text | string | Email | { required: true, group: Email field Configuration } ]]">
+            <div class="sc-modal_button-wrapper">
+                <button id="sc_TopBanner-button" class="sc_TopBanner__p--button">[[Button Text | text | I accept | { group: Button Configuration }]]</button>
+                <a class="sc-modal_button"  target="_blank" id="sc-privacy_button" href="[[ Privacy Link | string | https://www.example.com/ | { required: true , group: Email field Configuration } ]]">Privacy</a>
             </div>
         </div>
     </div>
-    <div class="bx__btn-close__icon"></div>
+    <div class="sc__btn-close__icon"></div>
 </div>
 
-<div id="bx-thank_you_modal">
-    <div class="bx-modal_content">
+<div id="sc-thank_you_modal">
+    <div class="sc-modal_content">
         <h3>[[ Thank You Title Text | string | Thank You! | { required: true , group: Thank you message} ]]</h3>
         <p>[[ Thank You Description Text | text | You're all signed up. | { required: true , group: Thank you message} ]]</p>
     </div>
