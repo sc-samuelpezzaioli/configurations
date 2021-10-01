@@ -11,8 +11,8 @@ insertHTMLBefore("body");
 document.body.classList.add("show-TopBanner");
 
 // declarations
-const scButtonPress = document.getElementById('sc-CTA');
-const scCloseButtonPress = document.querySelector(".sc-x-btn");
+const scButtonPress = document.getElementById('sCDP-CTA');
+const scCloseButtonPress = document.querySelector(".sCDP-x-btn");
 let isBannerBeenClosed = false;
 
 // when sending email, if is verified sendInteractionToSitecoreCDP() or "stop event" ;
@@ -25,7 +25,7 @@ scButtonPress.onclick = function(){
         showThankYou();
     }else{
         //friendly error
-        document.getElementById("sc-email_input").style.backgroundColor = 'rgba(200,0,0,0.1)'
+        document.getElementById("sCDP-email_input").style.backgroundColor = 'rgba(200,0,0,0.1)'
         isBannerBeenClosed = false;
     }
 };
@@ -42,13 +42,13 @@ const currentScrollPercentage = function(){
     const scrollPercentage = Math.round((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100);
 
     if (scrollPercentage > scrollPercentageInput && !isBannerBeenClosed){
-        document.querySelector(`#bx-${variant.ref} #sc-top-banner-container`).style.display = "flex";
+        document.querySelector(`#bx-${variant.ref} #sCDP-top-banner-container`).style.display = "flex";
         document.body.classList.add("show-TopBanner");
     }
 }
 
 const showThankYou= function(){
-    let thanksMessage = document.querySelector('#sc-thank_you_modal');
+    let thanksMessage = document.querySelector('#sCDP-thank_you_modal');
     thanksMessage.style.display = "block";
 
     setTimeout(function(){ thanksMessage.style.display= 'none'; }, 1500);
@@ -56,7 +56,7 @@ const showThankYou= function(){
 
 // dismiss bar
 const hideBar = function(){
-    document.querySelector("#sc-top-banner-container").style.display = "none";
+    document.querySelector("#sCDP-top-banner-container").style.display = "none";
     document.body.classList.remove("show-TopBanner");
 }
 

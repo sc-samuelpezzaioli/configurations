@@ -17,11 +17,6 @@ Declare Sitecore CDP Template Variables
     display: none !important;
 }
 
-/* Add this clase when "click" close icon */
-.bx_TopBanner--hide {
-    display: none !important;
-}
-
 /* Push content down to allocate top banner */
 body.show-TopBanner {
     /*margin-top: 71px !important;*/
@@ -29,7 +24,7 @@ body.show-TopBanner {
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #sc-top-banner-container{
+#bx-{{ref}} #sCDP-top-banner-container{
     -webkit-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     -moz-box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
     box-shadow: 0px 0px 4px 0px rgba(9,9,9,0.4);
@@ -37,7 +32,7 @@ body.show-TopBanner {
 }
 
 /* Banner's container styling */
-#bx-{{ref}} #sc-top-banner-container {
+#bx-{{ref}} #sCDP-top-banner-container {
     position: fixed;
     z-index: 99998;
     height: 71px;
@@ -51,7 +46,7 @@ body.show-TopBanner {
 }
 
 /* Banner styling */
-#bx-{{ref}} #sc-top-banner-container .sc-top-banner{
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-top-banner{
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -61,7 +56,7 @@ body.show-TopBanner {
 }
 
 /* Banner text */
-#bx-{{ref}} #sc-top-banner-container .sc-topbanner-title-text {
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-topbanner-title-text {
     color: [[Text Color]];
     font-size: [[ Title Text Font Size | number | 18 | { group: Text Configuration }]]px;
     flex-basis: 400px;
@@ -71,7 +66,7 @@ body.show-TopBanner {
 }
 
 /* email input and buttons container */
-#bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section{
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-top-banner .sCDP-email_section{
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -81,11 +76,11 @@ body.show-TopBanner {
     width: 300px; 
 }
 /* CTA button container */
-#bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section .sc-modal_button-wrapper{
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-top-banner .sCDP-email_section .sCDP-modal_button-wrapper{
     min-width: 183px; 
 }
 /* CTA button */
-#bx-{{ref}} #sc-top-banner-container .sc-CTA {
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-CTA {
     border-radius: 4px;
     display: inline-block;
     min-width: 110px;
@@ -102,19 +97,19 @@ body.show-TopBanner {
 }
 
 /* CTA button on hover*/
-#bx-{{ref}} #sc-top-banner-container .sc-CTA:hover {
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-CTA:hover {
     transform: scale(1.1);
 }
 
 /* CTA button on focus*/
-#bx-{{ref}} #sc-top-banner-container .sc-CTA:focus {
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-CTA:focus {
     /* border: none; */
     outline: 0;
     box-shadow: none!important;
 }
 
 /* email input */
-#bx-{{ref}} #sc-top-banner-container .sc-email_input {
+#bx-{{ref}} #sCDP-top-banner-container .sCDP-email_input {
     color: [[Text Color]];
     font-size: 18px;
     border-radius: 2px;
@@ -128,7 +123,7 @@ body.show-TopBanner {
 
 
 /* dark background  after sending the email ( Thank you modal )*/
-#bx-{{ref}} #sc-thank_you_modal{
+#bx-{{ref}} #sCDP-thank_you_modal{
     display: none;
     justify-content: center;
     align-items: center;
@@ -143,7 +138,7 @@ body.show-TopBanner {
 }
 
 /* Thank you modal General */
-#bx-{{ref}} #sc-thank_you_modal .sc-modal_content {
+#bx-{{ref}} #sCDP-thank_you_modal .sCDP-modal_content {
     display: flex;
     flex-direction: column;
     position:relative;
@@ -160,7 +155,7 @@ body.show-TopBanner {
 }
 
 /* Title */
-#bx-{{ref}} #sc-thank_you_modal .sc-modal_content h3 {
+#bx-{{ref}} #sCDP-thank_you_modal .sCDP-modal_content h3 {
     font-size: [[ POP-UP Title size in px | number | 28 | {  group: Thank you message} ]]px;
     font-weight: bold;
     margin: auto;
@@ -168,7 +163,7 @@ body.show-TopBanner {
 }
 
 /* text */
-#bx-{{ref}} #sc-thank_you_modal .sc-modal_content p {
+#bx-{{ref}} #sCDP-thank_you_modal .sCDP-modal_content p {
     text-align: center;
     padding: 12px 0;
     margin: 0;
@@ -179,7 +174,7 @@ body.show-TopBanner {
 }
 
 /* close button */
-#bx-{{ref}} .sc-x-btn {
+#bx-{{ref}} .sCDP-x-btn {
     background: [[ X Background Color | colour | #fff|{  group: Closing Button Configuration } ]];
     top: 20px; 
     right: 15px;
@@ -196,7 +191,7 @@ body.show-TopBanner {
     cursor: pointer;
 }
 /* close button right side of X  */
-#bx-{{ref}} .sc-x-btn:after {
+#bx-{{ref}} .sCDP-x-btn:after {
     background: transparent;
     content: "";
     height: 20px;
@@ -207,7 +202,7 @@ body.show-TopBanner {
     left:14px;
 }
 /* close button left side of X  */
-#bx-{{ref}} .sc-x-btn:before {
+#bx-{{ref}} .sCDP-x-btn:before {
     background: transparent;
     content: "";
     height: 20px;
@@ -223,16 +218,16 @@ body.show-TopBanner {
     body.show-TopBanner {
         margin-top: 100px !important;
     }
-    #bx-{{ref}} #sc-top-banner-container{
+    #bx-{{ref}} #sCDP-top-banner-container{
         height: 100px;
     }
-    #bx-{{ref}} #sc-top-banner-container .sc-top-banner {
+    #bx-{{ref}} #sCDP-top-banner-container .sCDP-top-banner {
       flex-direction: column;
     }
-    #bx-{{ref}} #sc-top-banner-container .sc-top-banner .sc-email_section{
+    #bx-{{ref}} #sCDP-top-banner-container .sCDP-top-banner .sCDP-email_section{
         margin-bottom: 5px;
     }
-    #bx-{{ref}} #sc-top-banner-container .sc-topbanner-title-text{
+    #bx-{{ref}} #sCDP-top-banner-container .sCDP-topbanner-title-text{
         padding: 10px;
     }
 }
